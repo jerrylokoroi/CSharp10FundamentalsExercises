@@ -1,6 +1,4 @@
-﻿Console.WriteLine("What is your name ?");
-string name = Console.ReadLine();
-Console.WriteLine("Which movie is your favourite ?");
-string movie = Console.ReadLine();
-
-Console.WriteLine("Hi " + name + ", your favourite movie is " + movie + ".");
+﻿int num = -5;
+bool isNegative = num < 0 ? true : false;
+bool isPositive = num > 0 ? false : false;
+Console.WriteLine(isPositive); // Output: True
