@@ -1,4 +1,2 @@
-﻿int num = -5;
-bool isNegative = num < 0 ? true : false;
-bool isPositive = num > 0 ? false : false;
-Console.WriteLine(isPositive);
+﻿DateTime dt = new DateTime(2023, 5, 3);
+Console.WriteLine("The day of the week for {0:d} is {1}.", dt, dt.DayOfWeek);
