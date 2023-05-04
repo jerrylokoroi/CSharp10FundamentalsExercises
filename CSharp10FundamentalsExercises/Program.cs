@@ -1,10 +1,5 @@
-﻿double ratePerHour = 125.50;
-int numOfHoursWorked = 95;
-int bonus = 1000;
-double currentMonthStipend = ratePerHour * numOfHoursWorked + bonus;
+﻿Console.WriteLine("Enter your character");
+string c = Console.ReadLine();
 
-ratePerHour -= 25;
-Console.WriteLine(currentMonthStipend);
-
-double currentMonthStipendInPercentage = currentMonthStipend / 100;
-Console.WriteLine(currentMonthStipendInPercentage);
+char ascii = char.Parse(c);
+Console.WriteLine($"\nASCII value of '{c}' is: {(int)ascii}");
