@@ -1,12 +1,15 @@
 ﻿
-Console.WriteLine("Enter your age: ");
-int age = int.Parse(Console.ReadLine());
+Console.WriteLine("Enter a letter: ");
+char letter = Console.ReadLine().ToLower()[0];
 
-string message = (age >= 18 && age <= 24) ? "You are almost eligible to work"
-    : (age >= 25 && age <= 70) ? "You are eligible to work"
-    : "You are not eligible to work";
+string result = (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u')
+    ? "Vowel"
+    : "Consonant";
 
-Console.WriteLine(message);
+Console.WriteLine(result);
+
+
+
 
 
 
