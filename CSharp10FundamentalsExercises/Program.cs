@@ -17,53 +17,58 @@
 
     int operation = int.Parse(Console.ReadLine());
 
+    decimal result = 0;
+
     switch (operation)
     {
         case 1:
-            Add(num1, num2);
+            result = Add(num1, num2);
             break;
         case 2:
-            Subtract(num1, num2);
+            result = Subtract(num1, num2);
             break;
         case 3:
-            Multiply(num1, num2);
+            result = Multiply(num1, num2);
             break;
         case 4:
-            Divide(num1, num2);
+            result = Divide(num1, num2);
             break;
         default:
             Console.WriteLine("Invalid operation!");
             break;
     }
+
+    Console.WriteLine("The result is: " + result);
 }
 
-static void Add(decimal a, decimal b)
+static decimal Add(decimal a, decimal b)
 {
     decimal result = a + b;
-    Console.WriteLine("The sum is: " + result);
+    return result;
 }
 
-static void Subtract(decimal a, decimal b)
+static decimal Subtract(decimal a, decimal b)
 {
     decimal result = a - b;
-    Console.WriteLine("The difference is: " + result);
+    return result;
 }
 
-static void Multiply(decimal a, decimal b)
+static decimal Multiply(decimal a, decimal b)
 {
     decimal result = a * b;
-    Console.WriteLine("The product is: " + result);
+    return result;
 }
 
-static void Divide(decimal a, decimal b)
+static decimal Divide(decimal a, decimal b)
 {
     if (b != 0)
     {
         decimal result = a / b;
-        Console.WriteLine("The quotient is: " + result);
+        return result;
     }
     else
     {
         Console.WriteLine("Error: Division by zero is not allowed!");
+        return 0; // Return 0 as a default value when division by zero occurs
     }
 }
