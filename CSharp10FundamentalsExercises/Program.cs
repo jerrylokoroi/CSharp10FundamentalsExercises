@@ -1,17 +1,12 @@
-﻿Func<decimal, decimal, decimal> Add = (a, b) => a + b;
-Func<decimal, decimal, decimal> Subtract = (a, b) => a - b;
-Func<decimal, decimal, decimal> Multiply = (a, b) => a * b;
-Func<decimal, decimal, decimal> Divide = (a, b) => b != 0 ? a / b : 0;
-
-static void Main()
+﻿static void Main()
 {
     Console.WriteLine("Welcome to the Calculator!");
 
-    Console.WriteLine("Enter the first number:");
-    decimal num1 = decimal.Parse(Console.ReadLine());
+    Console.WriteLine("Enter the first value:");
+    string input1 = Console.ReadLine();
 
-    Console.WriteLine("Enter the second number:");
-    decimal num2 = decimal.Parse(Console.ReadLine());
+    Console.WriteLine("Enter the second value:");
+    string input2 = Console.ReadLine();
 
     Console.WriteLine("Choose an operation:");
     Console.WriteLine("1. Addition");
@@ -27,16 +22,16 @@ static void Main()
     switch (operation)
     {
         case 1:
-            result = Add(num1, num2);
+            result = Add(input1, input2);
             break;
         case 2:
-            result = Subtract(num1, num2);
+            result = Subtract(decimal.Parse(input1), decimal.Parse(input2));
             break;
         case 3:
-            result = Multiply(num1, num2);
+            result = Multiply(decimal.Parse(input1), decimal.Parse(input2));
             break;
         case 4:
-            result = Divide(num1, num2);
+            result = Divide(decimal.Parse(input1), decimal.Parse(input2));
             break;
         default:
             Console.WriteLine("Invalid operation!");
@@ -44,4 +39,52 @@ static void Main()
     }
 
     Console.WriteLine("The result is: " + result);
+}
+
+static decimal Add(decimal firstNumber, decimal secondNumber)
+{
+    decimal result = firstNumber + secondNumber;
+    return result;
+}
+
+static decimal Add(string firstString, string secondString)
+{
+    decimal firstNumber;
+    decimal secondNumber;
+
+    if (decimal.TryParse(firstString, out firstNumber) && decimal.TryParse(secondString, out secondNumber))
+    {
+        return Add(firstNumber, secondNumber);
+    }
+    else
+    {
+        Console.WriteLine("Error: Invalid input for addition!");
+        return 0; // Return 0 as a default value when input is invalid
+    }
+}
+
+static decimal Subtract(decimal firstNumber, decimal secondNumber)
+{
+    decimal result = firstNumber - secondNumber;
+    return result;
+}
+
+static decimal Multiply(decimal firstNumber, decimal secondNumber)
+{
+    decimal result = firstNumber * secondNumber;
+    return result;
+}
+
+static decimal Divide(decimal firstNumber, decimal secondNumber)
+{
+    if (secondNumber != 0)
+    {
+        decimal result = firstNumber / secondNumber;
+        return result;
+    }
+    else
+    {
+        Console.WriteLine("Error: Division by zero is not allowed!");
+        return 0; // Return 0 as a default value when division by zero occurs
+    }
 }
