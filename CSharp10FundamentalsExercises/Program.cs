@@ -1,47 +1,43 @@
 ﻿static void Main()
 {
-    Console.WriteLine("Welcome to the Sport Application!");
-    Console.WriteLine("Please enter the number of hours of exercise per week:");
+    Console.WriteLine("Welcome to the Calculator!");
 
-    int hoursOfExercise = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Enter the first value:");
+    string input1 = Console.ReadLine();
 
-    string fitnessLevel = CalculateFitnessLevel(hoursOfExercise);
-    bool hasBonus = CheckBonus(hoursOfExercise);
+    Console.WriteLine("Enter the second value:");
+    string input2 = Console.ReadLine();
 
-    Console.WriteLine("Your fitness level is: " + fitnessLevel);
+    Console.WriteLine("Choose an operation:");
+    Console.WriteLine("1. Addition");
+    Console.WriteLine("2. Subtraction");
+    Console.WriteLine("3. Multiplication");
+    Console.WriteLine("4. Division");
+    Console.WriteLine("Enter the operation number:");
 
-    if (hasBonus)
+    int operation = int.Parse(Console.ReadLine());
+
+    decimal result = 0;
+
+    switch (operation)
     {
-        Console.WriteLine("Congratulations! You have earned an extra bonus!");
+        case 1:
+            result = Add(input1, input2);
+            break;
+        case 2:
+            result = Subtract(decimal.Parse(input1), decimal.Parse(input2));
+            break;
+        case 3:
+            result = Multiply(decimal.Parse(input1), decimal.Parse(input2));
+            break;
+        case 4:
+            result = Divide(decimal.Parse(input1), decimal.Parse(input2));
+            break;
+        default:
+            Console.WriteLine("Invalid operation!");
+            break;
     }
 
-    Console.WriteLine("Thank you for using the Sport Application. Keep exercising!");
-
-    // Wait for user input to exit the application
-    Console.ReadLine();
+    Console.WriteLine("The result is: " + result);
 }
 
-static string CalculateFitnessLevel(int hoursOfExercise)
-{
-    if (hoursOfExercise < 3)
-    {
-        return "Beginner";
-    }
-    else if (hoursOfExercise < 6)
-    {
-        return "Intermediate";
-    }
-    else if (hoursOfExercise < 10)
-    {
-        return "Advanced";
-    }
-    else
-    {
-        return "Expert";
-    }
-}
-
-static bool CheckBonus(int hoursOfExercise)
-{
-    return hoursOfExercise > 10;
-}
