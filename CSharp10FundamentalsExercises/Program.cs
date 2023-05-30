@@ -1,43 +1,44 @@
-﻿static void Main()
+﻿static void Main(string[] args)
 {
-    Console.WriteLine("Welcome to the Calculator!");
+    Console.Write("Enter the number of random numbers to generate (default is 10): ");
+    string input = Console.ReadLine();
+    int count = ParseInput(input);
 
-    Console.WriteLine("Enter the first value:");
-    string input1 = Console.ReadLine();
+    int[] randomNumbers = GenerateRandomNumbers(count);
 
-    Console.WriteLine("Enter the second value:");
-    string input2 = Console.ReadLine();
-
-    Console.WriteLine("Choose an operation:");
-    Console.WriteLine("1. Addition");
-    Console.WriteLine("2. Subtraction");
-    Console.WriteLine("3. Multiplication");
-    Console.WriteLine("4. Division");
-    Console.WriteLine("Enter the operation number:");
-
-    int operation = int.Parse(Console.ReadLine());
-
-    decimal result = 0;
-
-    switch (operation)
+    Console.WriteLine($"Generated {randomNumbers.Length} random numbers:");
+    foreach (int number in randomNumbers)
     {
-        case 1:
-            result = Add(input1, input2);
-            break;
-        case 2:
-            result = Subtract(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        case 3:
-            result = Multiply(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        case 4:
-            result = Divide(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        default:
-            Console.WriteLine("Invalid operation!");
-            break;
+        Console.WriteLine(number);
+    }
+}
+
+static int ParseInput(string input)
+{
+    int count = 10; // default value
+
+    if (!string.IsNullOrEmpty(input))
+    {
+        if (!int.TryParse(input, out count))
+        {
+            Console.WriteLine("Invalid input. Using default value of 10.");
+            count = 10;
+        }
     }
 
-    Console.WriteLine("The result is: " + result);
+    return count;
+}
+
+static int[] GenerateRandomNumbers(int count = 10)
+{
+    Random random = new Random();
+    int[] numbers = new int[count];
+
+    for (int i = 0; i < count; i++)
+    {
+        numbers[i] = random.Next();
+    }
+
+    return numbers;
 }
 
