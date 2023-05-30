@@ -45,3 +45,5 @@ static bool CheckBonus(int hoursOfExercise)
 {
     return hoursOfExercise > 10;
 }
+
+Main();
