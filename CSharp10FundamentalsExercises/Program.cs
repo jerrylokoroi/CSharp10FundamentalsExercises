@@ -1,90 +1,47 @@
 ﻿static void Main()
 {
-    Console.WriteLine("Welcome to the Calculator!");
+    Console.WriteLine("Welcome to the Sport Application!");
+    Console.WriteLine("Please enter the number of hours of exercise per week:");
 
-    Console.WriteLine("Enter the first value:");
-    string input1 = Console.ReadLine();
+    int hoursOfExercise = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Enter the second value:");
-    string input2 = Console.ReadLine();
+    string fitnessLevel = CalculateFitnessLevel(hoursOfExercise);
+    bool hasBonus = CheckBonus(hoursOfExercise);
 
-    Console.WriteLine("Choose an operation:");
-    Console.WriteLine("1. Addition");
-    Console.WriteLine("2. Subtraction");
-    Console.WriteLine("3. Multiplication");
-    Console.WriteLine("4. Division");
-    Console.WriteLine("Enter the operation number:");
+    Console.WriteLine("Your fitness level is: " + fitnessLevel);
 
-    int operation = int.Parse(Console.ReadLine());
-
-    decimal result = 0;
-
-    switch (operation)
+    if (hasBonus)
     {
-        case 1:
-            result = Add(input1, input2);
-            break;
-        case 2:
-            result = Subtract(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        case 3:
-            result = Multiply(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        case 4:
-            result = Divide(decimal.Parse(input1), decimal.Parse(input2));
-            break;
-        default:
-            Console.WriteLine("Invalid operation!");
-            break;
+        Console.WriteLine("Congratulations! You have earned an extra bonus!");
     }
 
-    Console.WriteLine("The result is: " + result);
+    Console.WriteLine("Thank you for using the Sport Application. Keep exercising!");
+
+    // Wait for user input to exit the application
+    Console.ReadLine();
 }
 
-static decimal Add(decimal firstNumber, decimal secondNumber)
+static string CalculateFitnessLevel(int hoursOfExercise)
 {
-    decimal result = firstNumber + secondNumber;
-    return result;
-}
-
-static decimal Add(string firstString, string secondString)
-{
-    decimal firstNumber;
-    decimal secondNumber;
-
-    if (decimal.TryParse(firstString, out firstNumber) && decimal.TryParse(secondString, out secondNumber))
+    if (hoursOfExercise < 3)
     {
-        return Add(firstNumber, secondNumber);
+        return "Beginner";
+    }
+    else if (hoursOfExercise < 6)
+    {
+        return "Intermediate";
+    }
+    else if (hoursOfExercise < 10)
+    {
+        return "Advanced";
     }
     else
     {
-        Console.WriteLine("Error: Invalid input for addition!");
-        return 0; // Return 0 as a default value when input is invalid
+        return "Expert";
     }
 }
 
-static decimal Subtract(decimal firstNumber, decimal secondNumber)
+static bool CheckBonus(int hoursOfExercise)
 {
-    decimal result = firstNumber - secondNumber;
-    return result;
-}
-
-static decimal Multiply(decimal firstNumber, decimal secondNumber)
-{
-    decimal result = firstNumber * secondNumber;
-    return result;
-}
-
-static decimal Divide(decimal firstNumber, decimal secondNumber)
-{
-    if (secondNumber != 0)
-    {
-        decimal result = firstNumber / secondNumber;
-        return result;
-    }
-    else
-    {
-        Console.WriteLine("Error: Division by zero is not allowed!");
-        return 0; // Return 0 as a default value when division by zero occurs
-    }
+    return hoursOfExercise > 10;
 }
