@@ -1,9 +1,4 @@
-﻿Func<decimal, decimal, decimal> Add = (a, b) => a + b;
-Func<decimal, decimal, decimal> Subtract = (a, b) => a - b;
-Func<decimal, decimal, decimal> Multiply = (a, b) => a * b;
-Func<decimal, decimal, decimal> Divide = (a, b) => b != 0 ? a / b : 0;
-
-static void Main()
+﻿static void Main()
 {
     Console.WriteLine("Welcome to the Calculator!");
 
@@ -22,26 +17,17 @@ static void Main()
 
     int operation = int.Parse(Console.ReadLine());
 
-    decimal result = 0;
-
-    switch (operation)
+    decimal result = operation switch
     {
-        case 1:
-            result = Add(num1, num2);
-            break;
-        case 2:
-            result = Subtract(num1, num2);
-            break;
-        case 3:
-            result = Multiply(num1, num2);
-            break;
-        case 4:
-            result = Divide(num1, num2);
-            break;
-        default:
-            Console.WriteLine("Invalid operation!");
-            break;
-    }
+        1 => num1 + num2,
+        2 => num1 - num2,
+        3 => num1 * num2,
+        4 => num1 / num2,
+        _ => throw new InvalidOperationException("Invalid operation!")
+    };
 
     Console.WriteLine("The result is: " + result);
 }
+
+
+Main();
