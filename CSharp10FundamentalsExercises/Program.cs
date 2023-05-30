@@ -1,4 +1,9 @@
-﻿static void Main()
+﻿Func<decimal, decimal, decimal> Add = (a, b) => a + b;
+Func<decimal, decimal, decimal> Subtract = (a, b) => a - b;
+Func<decimal, decimal, decimal> Multiply = (a, b) => a * b;
+Func<decimal, decimal, decimal> Divide = (a, b) => b != 0 ? a / b : 0;
+
+static void Main()
 {
     Console.WriteLine("Welcome to the Calculator!");
 
@@ -39,36 +44,4 @@
     }
 
     Console.WriteLine("The result is: " + result);
-}
-
-static decimal Add(decimal a, decimal b)
-{
-    decimal result = a + b;
-    return result;
-}
-
-static decimal Subtract(decimal a, decimal b)
-{
-    decimal result = a - b;
-    return result;
-}
-
-static decimal Multiply(decimal a, decimal b)
-{
-    decimal result = a * b;
-    return result;
-}
-
-static decimal Divide(decimal a, decimal b)
-{
-    if (b != 0)
-    {
-        decimal result = a / b;
-        return result;
-    }
-    else
-    {
-        Console.WriteLine("Error: Division by zero is not allowed!");
-        return 0; // Return 0 as a default value when division by zero occurs
-    }
 }
