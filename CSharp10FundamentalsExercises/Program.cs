@@ -1,45 +1,69 @@
 ﻿static void Main()
 {
-    const int NumberOfAges = 3;  // Change this value to adjust the number of ages to read
+    Console.WriteLine("Welcome to the Calculator!");
 
-    // Read age values from the user
-    int[] ages = ReadAges(NumberOfAges);
+    Console.WriteLine("Enter the first number:");
+    decimal num1 = decimal.Parse(Console.ReadLine());
 
-    // Calculate the average age
-    double averageAge = CalculateAverageAge(ages);
+    Console.WriteLine("Enter the second number:");
+    decimal num2 = decimal.Parse(Console.ReadLine());
 
-    // Print the result in a nice format
-    PrintAverageAge(averageAge);
+    Console.WriteLine("Choose an operation:");
+    Console.WriteLine("1. Addition");
+    Console.WriteLine("2. Subtraction");
+    Console.WriteLine("3. Multiplication");
+    Console.WriteLine("4. Division");
+    Console.WriteLine("Enter the operation number:");
 
-    Console.ReadLine();  // Wait for the user to press Enter
-}
+    int operation = int.Parse(Console.ReadLine());
 
-static int[] ReadAges(int numberOfAges)
-{
-    int[] ages = new int[numberOfAges];
-
-    for (int i = 0; i < numberOfAges; i++)
+    switch (operation)
     {
-        Console.Write($"Enter age {i + 1}: ");
-        ages[i] = Convert.ToInt32(Console.ReadLine());
+        case 1:
+            Add(num1, num2);
+            break;
+        case 2:
+            Subtract(num1, num2);
+            break;
+        case 3:
+            Multiply(num1, num2);
+            break;
+        case 4:
+            Divide(num1, num2);
+            break;
+        default:
+            Console.WriteLine("Invalid operation!");
+            break;
     }
-
-    return ages;
 }
 
-static double CalculateAverageAge(int[] ages)
+static void Add(decimal a, decimal b)
 {
-    int sum = 0;
-    for (int i = 0; i < ages.Length; i++)
+    decimal result = a + b;
+    Console.WriteLine("The sum is: " + result);
+}
+
+static void Subtract(decimal a, decimal b)
+{
+    decimal result = a - b;
+    Console.WriteLine("The difference is: " + result);
+}
+
+static void Multiply(decimal a, decimal b)
+{
+    decimal result = a * b;
+    Console.WriteLine("The product is: " + result);
+}
+
+static void Divide(decimal a, decimal b)
+{
+    if (b != 0)
     {
-        sum += ages[i];
+        decimal result = a / b;
+        Console.WriteLine("The quotient is: " + result);
     }
-
-    double averageAge = (double)sum / ages.Length;
-    return averageAge;
-}
-
-static void PrintAverageAge(double averageAge)
-{
-    Console.WriteLine($"Average age: {averageAge:F2}");
+    else
+    {
+        Console.WriteLine("Error: Division by zero is not allowed!");
+    }
 }
