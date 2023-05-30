@@ -72,3 +72,5 @@ static decimal Divide(decimal a, decimal b)
         return 0; // Return 0 as a default value when division by zero occurs
     }
 }
+
+Main();
