@@ -67,3 +67,5 @@ static void Divide(decimal a, decimal b)
         Console.WriteLine("Error: Division by zero is not allowed!");
     }
 }
+
+Main();
