@@ -43,3 +43,5 @@ static void PrintAverageAge(double averageAge)
 {
     Console.WriteLine($"Average age: {averageAge:F2}");
 }
+
+Main();
