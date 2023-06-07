@@ -5,4 +5,4 @@ Console.WriteLine("Enter last name: ");
 string lastName = Console.ReadLine();
 
 
-Console.WriteLine($"Hello \n{firstName.ToUpper()}\t{lastName.ToUpper()}");
+Console.WriteLine($"Hello \n{firstName.Trim().ToUpper()} {lastName.Trim().ToUpper()}");
