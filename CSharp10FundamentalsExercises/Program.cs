@@ -1,44 +1,10 @@
-﻿static void Main(string[] args)
-{
-    Console.Write("Enter the number of random numbers to generate (default is 10): ");
-    string input = Console.ReadLine();
-    int count = ParseInput(input);
+﻿Console.WriteLine("Enter your name: ");
+string name = Console.ReadLine();
 
-    int[] randomNumbers = GenerateRandomNumbers(count);
+Console.WriteLine("Enter the activity: ");
+string activity = Console.ReadLine();
 
-    Console.WriteLine($"Generated {randomNumbers.Length} random numbers:");
-    foreach (int number in randomNumbers)
-    {
-        Console.WriteLine(number);
-    }
-}
+Console.WriteLine("Enter the number of hours of workout this week: ");
+string hours = Console.ReadLine();
 
-static int ParseInput(string input)
-{
-    int count = 10; // default value
-
-    if (!string.IsNullOrEmpty(input))
-    {
-        if (!int.TryParse(input, out count))
-        {
-            Console.WriteLine("Invalid input. Using default value of 10.");
-            count = 10;
-        }
-    }
-
-    return count;
-}
-
-static int[] GenerateRandomNumbers(int count = 10)
-{
-    Random random = new Random();
-    int[] numbers = new int[count];
-
-    for (int i = 0; i < count; i++)
-    {
-        numbers[i] = random.Next();
-    }
-
-    return numbers;
-}
-
+Console.WriteLine($"Congratulations {name} ! you have practiced {activity} for {hours} hours this week. Congratulations!");
