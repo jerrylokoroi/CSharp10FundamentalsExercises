@@ -9,7 +9,44 @@ namespace CSharp10FundamentalsExercises
     internal class Utility
     {
 
-        public static int CalcTotalNumOfHrsOfWorkoutPerWeek(string averageHoursPerDay)
+        static Random random = new Random();
+
+        public static void Main()
+        {
+            Console.WriteLine("Enter a string:");
+            string input = Console.ReadLine();
+            string modifiedString = InsertRandomCharacters(input);
+            Console.WriteLine("Modified string:");
+            Console.WriteLine(modifiedString);
+
+            InsertRandomCharacters(input);
+        }
+
+        static string InsertRandomCharacters(string input)
+        {
+            string modifiedString = string.Empty;
+
+            for (int i = 0; i < input.Length; i++)
+            {
+                modifiedString += input[i];
+
+                if (random.NextDouble() < 0.2)
+                {
+                    // Insert '\n' with 20% probability
+                    modifiedString += '\n';
+                }
+
+                if (random.NextDouble() < 0.1)
+                {
+                    // Insert '\t' with 10% probability
+                    modifiedString += '\t';
+                }
+            }
+          
+            return modifiedString;
+
+        }
+    public static int CalcTotalNumOfHrsOfWorkoutPerWeek(string averageHoursPerDay)
         {
             int averageHoursPerWeek =  int.Parse(averageHoursPerDay) * 7;
             return averageHoursPerWeek;
