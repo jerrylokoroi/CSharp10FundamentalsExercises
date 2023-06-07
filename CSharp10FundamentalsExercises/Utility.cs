@@ -8,6 +8,12 @@ namespace CSharp10FundamentalsExercises
 {
     internal class Utility
     {
+
+        public static int CalcTotalNumOfHrsOfWorkoutPerWeek(string averageHoursPerDay)
+        {
+            int averageHoursPerWeek =  int.Parse(averageHoursPerDay) * 7;
+            return averageHoursPerWeek;
+        }
         static decimal Add(decimal firstNumber, decimal secondNumber)
         {
             decimal result = firstNumber + secondNumber;
