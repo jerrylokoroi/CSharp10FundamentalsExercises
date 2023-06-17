@@ -16,6 +16,12 @@ namespace CSharp10FundamentalsExercises
             Console.WriteLine("Engine Started!");
         }
 
+        public Car (string color, int maxSpeed)
+        {
+            this.color = color;
+            this.maxSpeed = maxSpeed;
+        }
 
+       
     }
 }
