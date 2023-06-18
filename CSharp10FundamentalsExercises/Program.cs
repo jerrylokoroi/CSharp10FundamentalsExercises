@@ -1,8 +1,2 @@
-﻿using CSharp10FundamentalsExercises;
+﻿using System.Drawing;
 
-
-
-Car myCar = new Car("Black", 200);
-
-
-myCar.StartEngine();
