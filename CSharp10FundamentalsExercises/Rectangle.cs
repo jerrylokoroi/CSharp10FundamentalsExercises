@@ -12,7 +12,7 @@ namespace CSharp10FundamentalsExercises
         public double Length { get; }
         public double Width { get; }
 
-        public  Rectangle(double length, double width)
+        public Rectangle(double length, double width)
         {
             Length = length;
             Width = width;
