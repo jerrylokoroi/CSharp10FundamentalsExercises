@@ -12,7 +12,7 @@ namespace CSharp10FundamentalsExercises
         public int age;
         public double salary;
 
-       
+        Employee employee = new Employee("Jerry", 23, 40000);
 
         public Employee()
         {
