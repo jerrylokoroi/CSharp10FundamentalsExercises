@@ -1,6 +1,5 @@
-﻿Public CalculateSumMultipliedByFirst(int firstNumber, int secondNumber, Public result)
-{
-    int sum = firstNumber + secondNumber;
-    int result = sum * firstNumber;
-    return result;
-}
+﻿string originalString = "Hello, world!";
+string copiedString = String.Copy(originalString);
+
+Console.WriteLine("Original String: " + originalString);
+Console.WriteLine("Copied String: " + copiedString);
