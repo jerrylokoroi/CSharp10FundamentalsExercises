@@ -18,18 +18,14 @@ namespace CSharp10FundamentalsExercises
             Width = width;
         }
 
-        public double CalculateArea(double length, double width)
+        public double CalculateArea()
         {
-            double area = Length * Width;
-            // return length * width 
-            return area;
+            return Length * Width;
         }
 
         public double CalculatePerimeter(double length, double width)
         {
-            double perimeter = 2 * (Length + Width);
-            // return 2 * (Length + Width)
-            return perimeter;
+            return 2 * (length + width);
         }
     }
 }
