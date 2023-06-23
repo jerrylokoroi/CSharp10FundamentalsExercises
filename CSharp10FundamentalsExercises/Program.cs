@@ -1,5 +1,15 @@
-﻿string originalString = "Hello, world!";
-string copiedString = String.Copy(originalString);
+﻿Public void Main()
+{
+    int a = 5;
+    int b = 10;
 
-Console.WriteLine("Original String: " + originalString);
-Console.WriteLine("Copied String: " + copiedString);
+    Console.WriteLine($"Before swap: a = {a}, b = {b}");
+
+    Swap(ref a, ref b);
+
+    Console.WriteLine($"After swap: a = {a}, b = {b}");
+}
+
+Public void Swap(ref int x, ref int y){
+    (x, y) = (y, x);
+}
