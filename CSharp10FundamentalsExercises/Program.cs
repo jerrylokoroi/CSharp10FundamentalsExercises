@@ -1,15 +1,6 @@
-﻿Public void Main()
-{
-    int a = 5;
-    int b = 10;
+﻿string str1 = "Hello";
+string str2 = " World";
 
-    Console.WriteLine($"Before swap: a = {a}, b = {b}");
+string result = String.Concat(str1, str2);
 
-    Swap(ref a, ref b);
-
-    Console.WriteLine($"After swap: a = {a}, b = {b}");
-}
-
-Public void Swap(ref int x, ref int y){
-    (x, y) = (y, x);
-}
+Console.WriteLine(result);
