@@ -25,6 +25,9 @@ namespace CSharp10FundamentalsExercises
             this.salary = salary;
         }
 
+        public object Name { get; internal set; }
+        public object JobTitle { get; internal set; }
+
         public void EmployeeSalaryRaise(double raiseAmount)
         {
             salary += raiseAmount;

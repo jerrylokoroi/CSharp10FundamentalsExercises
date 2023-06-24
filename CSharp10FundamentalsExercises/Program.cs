@@ -1,9 +1,26 @@
-﻿string string1 = "Jerry";
-string string2 = "Lokoroi";
+﻿// Create employees
+using CSharp10FundamentalsExercises;
 
-string string4 = string1.ToLower();
-string string3 = string2.ToUpper();
+Employee employee1 = new Employee
+{
+    Name = "Jerry Lokoroi",
+    JobTitle = "Developer",
+    salary = 500000
+};
 
+Employee employee2 = new Employee
+{
+    Name = "Boniface Kabiru",
+    JobTitle = "Designer",
+    salary = 400000
+};
 
-Console.WriteLine(string3);
-Console.WriteLine(string4);
+// Create company
+Company company = new Company
+{
+    Name = "StartUp Lions Company",
+    Employees = new List<Employee> { employee1, employee2 }
+};
+
+// List employees
+company.ListEmployees();
