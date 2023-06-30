@@ -17,24 +17,15 @@ namespace CSharp10FundamentalsExercises
             // Constructor
             public Car(string modelName, string color, int maxSpeed)
             {
-                
-
-                Car myCar = new Car(modelName, color, maxSpeed);
-
-
-                color = this.color;
-                maxSpeed = this.maxSpeed;
-                modelName = this.modelName;  
-
-                modelName = "G-Wagon";
-                color = "Jungle-green";
-                maxSpeed = 200;
+                this.color = color;
+                this.maxSpeed = maxSpeed;
+                this.modelName = modelName;  
             }
 
-            // Method
-            public void StartEngine()
+        // Method
+        public void StartEngine()
             {
-                Console.WriteLine("Engine started!");
+               Console.WriteLine("Engine started!");
             }
         
     }
