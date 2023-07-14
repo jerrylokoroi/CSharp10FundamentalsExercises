@@ -1,17 +1,17 @@
-﻿static int GetLengthOfString(string input)
+﻿string name = GetNameFromUser();
+Console.WriteLine("Hello, " + name + "! Welcome to the program.");
+
+static string GetNameFromUser()
 {
-    if (input == null)
+    Console.Write("Enter your name: ");
+    string name = Console.ReadLine();
+
+    if (string.IsNullOrEmpty(name))
     {
-        return 0;
+        Console.WriteLine("Please enter your name.");
+        return GetNameFromUser(); // Recursively call the method again
     }
 
-    return input.Length;
+    return name;
 }
 
-string greetings = "I love writing codes!";
-int length = GetLengthOfString(greetings);
-Console.WriteLine("String length: " + length);
-
-/*string nullText = null;
-length = GetLengthOfString(greetings);
-Console.WriteLine("String length: " + length);*/
