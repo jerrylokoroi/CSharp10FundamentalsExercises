@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CSharp10FundamentalsExercises
+/*namespace CSharp10FundamentalsExercises
 {
     internal class Colors
     {
@@ -23,9 +23,9 @@ namespace CSharp10FundamentalsExercises
                 case "blue":
                     return ConsoleColor.Blue;
                 default:
-                    throw new ArgumentException("Invalid color name.");
+                    return null;
             }
         }
     }
-}
+}*/
 

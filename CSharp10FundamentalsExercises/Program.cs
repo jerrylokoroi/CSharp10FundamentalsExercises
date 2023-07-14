@@ -1,10 +1,17 @@
-﻿using CSharp10FundamentalsExercises;
+﻿static int GetLengthOfString(string input)
+{
+    if (input == null)
+    {
+        return 0;
+    }
 
-string colorName = "Green";
-ConsoleColor color = Colors.GetColor(colorName);
+    return input.Length;
+}
 
-Console.WriteLine($"Color name: {colorName}");
+string greetings = "I love writing codes!";
+int length = GetLengthOfString(greetings);
+Console.WriteLine("String length: " + length);
 
-
-
-
+/*string nullText = null;
+length = GetLengthOfString(greetings);
+Console.WriteLine("String length: " + length);*/
