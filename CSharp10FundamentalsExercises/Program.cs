@@ -1,10 +1,15 @@
-﻿// Testing the Addition class
-int sum = CSharp10FundamentalsExercises.MyMath.Addition.Add(5, 3);
-Console.WriteLine($"Addition result: {sum}");
+﻿using CSharp10FundamentalsExercises;
+using CSharp10FundamentalsExercises.MyShapes;
 
-// Testing the Subtraction class
-int difference = CSharp10FundamentalsExercises.MyMath.Subtraction.Sub(8, 4);
-Console.WriteLine($"Subtraction result: {difference}");
+// Creating instances of each shape
+CSharp10FundamentalsExercises.Circle circle = new CSharp10FundamentalsExercises.Circle(5);
+Square square = new Square(4);
+CSharp10FundamentalsExercises.Rectangle rectangle = new CSharp10FundamentalsExercises.Rectangle(3, 6);
+
+// Calculating and printing the areas
+Console.WriteLine("Circle area: " + circle.CalculateArea());
+Console.WriteLine("Square area: " + square.CalculateArea());
+Console.WriteLine("Rectangle area: " + rectangle.CalculateArea());
 
 
 
