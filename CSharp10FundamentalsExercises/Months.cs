@@ -22,14 +22,13 @@ namespace CSharp10FundamentalsExercises
         December
     }
 
-    public static string GetMonthName(int number)
+    /*private static string GetMonthName(int number)
     {
         if (Enum.IsDefined(typeof(Months), number))
         {
             Months month = (Months)number;
             return month.ToString();
         }
-
-        throw new ArgumentException("Invalid month number.");
-    }
+        return "Invalid month";
+    }*/
 }
