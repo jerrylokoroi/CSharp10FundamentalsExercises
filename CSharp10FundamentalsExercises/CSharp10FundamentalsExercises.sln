@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharp10FundamentalsExercises", "CSharp10FundamentalsExercises.csproj", "{BDE526B6-A87C-4B1C-9210-CC970D7642D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharp10FundamentalsExercises", "CSharp10FundamentalsExercises.csproj", "{BDE526B6-A87C-4B1C-9210-CC970D7642D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonLibrary", "..\PersonLibrary\PersonLibrary.csproj", "{94518496-8005-4E47-BE30-3332C2FF4713}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{BDE526B6-A87C-4B1C-9210-CC970D7642D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDE526B6-A87C-4B1C-9210-CC970D7642D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDE526B6-A87C-4B1C-9210-CC970D7642D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94518496-8005-4E47-BE30-3332C2FF4713}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94518496-8005-4E47-BE30-3332C2FF4713}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94518496-8005-4E47-BE30-3332C2FF4713}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94518496-8005-4E47-BE30-3332C2FF4713}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

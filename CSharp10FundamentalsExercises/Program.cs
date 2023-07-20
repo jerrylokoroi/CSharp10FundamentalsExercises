@@ -1,17 +1,14 @@
-﻿string name = GetNameFromUser();
-Console.WriteLine("Hello, " + name + "! Welcome to the program.");
+﻿using PersonLibrary;
 
-static string GetNameFromUser()
+Person person = new Person
 {
-    Console.Write("Enter your name: ");
-    string name = Console.ReadLine();
+    FirstName = "Jerry",
+    LastName = "Lokoroi",
+    Age = 23,
+    EmailAddress = "jerry.ekuwom@learninglions.org"
+};
 
-    if (string.IsNullOrEmpty(name))
-    {
-        Console.WriteLine("Please enter your name.");
-        return GetNameFromUser(); // Recursively call the method again
-    }
+string fullName = person.GetFullName();
+Console.WriteLine($"Full Name: {fullName}");
 
-    return name;
-}
 
