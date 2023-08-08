@@ -1,22 +1,20 @@
-﻿// Create a 2D array of integers
-int[,] array2D = {
-            { 1, 2, 3 },
-            { 4, 5, 6 },
-            { 7, 8, 9 }
-        };
+﻿// Create an array of strings and initialize with favorite movies
+string[] favoriteMovies = { "The Mummy", "Extraction", "London Has Fallen", "Mad Max" };
 
-// Get the dimensions of the array
-int rows = array2D.GetLength(0);
-int cols = array2D.GetLength(1);
+// Add another favorite movie using Array.Resize
+Array.Resize(ref favoriteMovies, favoriteMovies.Length + 1);
+favoriteMovies[favoriteMovies.Length - 1] = "Apocalyptus";
 
-// Print all elements in the array
-Console.WriteLine("Array elements:");
-for (int row = 0; row < rows; row++)
+// Print out the second element using the indexer (index 1)
+Console.WriteLine("Second favorite movie: " + favoriteMovies[1]);
+
+// Sort the array in alphabetical order
+Array.Sort(favoriteMovies);
+
+// Print the sorted array
+Console.WriteLine("Favorite movies in alphabetical order:");
+foreach (string movie in favoriteMovies)
 {
-    for (int col = 0; col < cols; col++)
-    {
-        Console.Write(array2D[row, col] + " ");
-    }
-    Console.WriteLine(); // Move to the next row
+    Console.WriteLine(movie);
 }
 
