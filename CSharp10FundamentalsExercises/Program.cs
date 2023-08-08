@@ -1,14 +1,11 @@
-﻿using PersonLibrary;
+﻿// Create an array of integers
+int[] numbers = { 1, 2, 3, 4, 5 };
 
-Person person = new Person
+// Print each element and the length of the array
+Console.WriteLine("Array elements:");
+for (int i = 0; i < numbers.Length; i++)
 {
-    FirstName = "Jerry",
-    LastName = "Lokoroi",
-    Age = 23,
-    EmailAddress = "jerry.ekuwom@learninglions.org"
-}; 
-
-string fullName = person.GetFullName();
-Console.WriteLine($"Full Name: {fullName}");
-
+    Console.WriteLine($"Element {i}: {numbers[i]}");
+}
+Console.WriteLine($"Array length: {numbers.Length}");
 
