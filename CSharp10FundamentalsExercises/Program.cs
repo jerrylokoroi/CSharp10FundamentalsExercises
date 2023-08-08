@@ -1,20 +1,16 @@
-﻿// Create an array of strings and initialize with favorite movies
-string[] favoriteMovies = { "The Mummy", "Extraction", "London Has Fallen", "Mad Max" };
+﻿// Create a List of integers and add 7 elements
+List<int> numbersList = new List<int> { 10, 20, 30, 40, 50, 60, 70 };
 
-// Add another favorite movie using Array.Resize
-Array.Resize(ref favoriteMovies, favoriteMovies.Length + 1);
-favoriteMovies[favoriteMovies.Length - 1] = "Apocalyptus";
+// Remove the 5th element (index 4)
+numbersList.RemoveAt(4);
 
-// Print out the second element using the indexer (index 1)
-Console.WriteLine("Second favorite movie: " + favoriteMovies[1]);
+// Insert an element at the beginning
+numbersList.Insert(0, 5);
 
-// Sort the array in alphabetical order
-Array.Sort(favoriteMovies);
-
-// Print the sorted array
-Console.WriteLine("Favorite movies in alphabetical order:");
-foreach (string movie in favoriteMovies)
+// Print out all elements using a foreach loop
+Console.WriteLine("List elements:");
+foreach (int number in numbersList)
 {
-    Console.WriteLine(movie);
+    Console.WriteLine(number);
 }
 
