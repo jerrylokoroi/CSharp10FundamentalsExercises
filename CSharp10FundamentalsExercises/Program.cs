@@ -1,11 +1,16 @@
-﻿// Create an array of integers
-int[] numbers = { 1, 2, 3, 4, 5 };
+﻿// Create an array of doubles
+double[] values = { 2.5, 3.8, 1.7, 4.2, 5.0 };
 
-// Print each element and the length of the array
-Console.WriteLine("Array elements:");
-for (int i = 0; i < numbers.Length; i++)
+// Calculate the sum of all elements
+double sum = 0.0;
+for (int i = 0; i < values.Length; i++)
 {
-    Console.WriteLine($"Element {i}: {numbers[i]}");
+    sum += values[i];
 }
-Console.WriteLine($"Array length: {numbers.Length}");
+
+// Calculate the average
+double average = sum / values.Length;
+
+// Print the average
+Console.WriteLine($"Average: {average}");
 
