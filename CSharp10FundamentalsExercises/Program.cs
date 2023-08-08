@@ -1,16 +1,25 @@
-﻿// Create a List of integers and add 7 elements
-List<int> numbersList = new List<int> { 10, 20, 30, 40, 50, 60, 70 };
+﻿List<int> numbers = new List<int> { 5, 8, 10, 15, 20, 25, 30, 35 };
 
-// Remove the 5th element (index 4)
-numbersList.RemoveAt(4);
+List<int> filteredNumbers = GetEvenNumbersGreaterThanEqualTo10(numbers);
 
-// Insert an element at the beginning
-numbersList.Insert(0, 5);
-
-// Print out all elements using a foreach loop
-Console.WriteLine("List elements:");
-foreach (int number in numbersList)
+Console.WriteLine("Filtered numbers:");
+foreach (int number in filteredNumbers)
 {
     Console.WriteLine(number);
+}
+
+static List<int> GetEvenNumbersGreaterThanEqualTo10(List<int> inputList)
+{
+    List<int> result = new List<int>();
+
+    foreach (int number in inputList)
+    {
+        if (number >= 10 && number % 2 == 0)
+        {
+            result.Add(number);
+        }
+    }
+
+    return result;
 }
 
