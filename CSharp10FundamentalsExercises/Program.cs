@@ -1,15 +1,14 @@
 ﻿using CSharp10FundamentalsExercises;
 
-// Create a Person object
-Person person = new Person("Jerry Lokoroi", 33, "48 Norad ST");
+Mammals dog = new Mammals
+{
+    Name = "Dog",
+    Weight = 15.5,
+    NumberOfLegs = 4
+};
 
-// Get and print the initial values
-Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}, Address: {person.GetAddress()}");
+dog.Eat();
+dog.Sleep();
+dog.Move();
 
-// Set new values
-person.SetName("Jerry(Jnr) Feely Ekuwam");
-person.SetAge(10);
-person.SetAddress("456 Parklands");
-
-// Get and print the updated values
-Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}, Address: {person.GetAddress()}");
+Console.WriteLine($"{dog.Name} weighs {dog.Weight} pounds and has {dog.NumberOfLegs} legs.");
