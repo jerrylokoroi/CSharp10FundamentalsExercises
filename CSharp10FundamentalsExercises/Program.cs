@@ -1,25 +1,15 @@
-﻿List<int> numbers = new List<int> { 5, 8, 10, 15, 20, 25, 30, 35 };
+﻿using CSharp10FundamentalsExercises;
 
-List<int> filteredNumbers = GetEvenNumbersGreaterThanEqualTo10(numbers);
+// Create a Person object
+Person person = new Person("Jerry Lokoroi", 33, "48 Norad ST");
 
-Console.WriteLine("Filtered numbers:");
-foreach (int number in filteredNumbers)
-{
-    Console.WriteLine(number);
-}
+// Get and print the initial values
+Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}, Address: {person.GetAddress()}");
 
-static List<int> GetEvenNumbersGreaterThanEqualTo10(List<int> inputList)
-{
-    List<int> result = new List<int>();
+// Set new values
+person.SetName("Jerry(Jnr) Feely Ekuwam");
+person.SetAge(10);
+person.SetAddress("456 Parklands");
 
-    foreach (int number in inputList)
-    {
-        if (number >= 10 && number % 2 == 0)
-        {
-            result.Add(number);
-        }
-    }
-
-    return result;
-}
-
+// Get and print the updated values
+Console.WriteLine($"Name: {person.GetName()}, Age: {person.GetAge()}, Address: {person.GetAddress()}");
