@@ -1,6 +1,11 @@
 ﻿using CSharp10FundamentalsExercises;
 
-ElectricCar tesla = new ElectricCar();
+List<Shape> shapes = new List<Shape> ();
 
-tesla.StartEngine(); // Calls the method from the base class Car
-tesla.Charge(); // Calls the method from the ElectricCar class
+shapes.Add(new Rectangle3());
+shapes.Add(new Circle2());
+
+foreach (Shape shape in shapes)
+{
+    shape.Draw();
+}
