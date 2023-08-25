@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonLibrary", "..\PersonL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleMathTests", "..\SimpleMathTests\SimpleMathTests.csproj", "{F5433007-8E05-48D8-82E8-ABF733E203DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculatorTests", "..\CalculatorTests\CalculatorTests.csproj", "{B9A60E7D-50F8-47E6-88A5-E5560F0C1118}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F5433007-8E05-48D8-82E8-ABF733E203DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F5433007-8E05-48D8-82E8-ABF733E203DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F5433007-8E05-48D8-82E8-ABF733E203DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9A60E7D-50F8-47E6-88A5-E5560F0C1118}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B9A60E7D-50F8-47E6-88A5-E5560F0C1118}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B9A60E7D-50F8-47E6-88A5-E5560F0C1118}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B9A60E7D-50F8-47E6-88A5-E5560F0C1118}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
