@@ -1,12 +1,7 @@
-﻿using CSharp10FundamentalsExercises;
+﻿Console.WriteLine("Enter your name: ");
+string name = Console.ReadLine();
 
-List<IDrawable> shapes = new List<IDrawable>();
+Console.WriteLine("Enter your age: ");
+int age = int.Parse(Console.ReadLine());
 
-shapes.Add(new Circle3());
-shapes.Add(new Rectangle4());
-shapes.Add(new Triangle());
-
-foreach (IDrawable shape in shapes)
-{
-    shape.Draw();
-}
+Console.WriteLine($"Hello {name}, you are {age} years old!");
