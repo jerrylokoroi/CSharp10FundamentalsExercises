@@ -1,7 +1,6 @@
-﻿Console.WriteLine("Enter your name: ");
-string name = Console.ReadLine();
+﻿using CSharp10FundamentalsExercises;
 
-Console.WriteLine("Enter your age: ");
-int age = int.Parse(Console.ReadLine());
+MathOperation math = new MathOperation();
+int sum = math.Add(3, 5);
 
-Console.WriteLine($"Hello {name}, you are {age} years old!");
+Console.WriteLine(sum);

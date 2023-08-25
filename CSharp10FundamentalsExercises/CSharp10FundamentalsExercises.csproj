@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PersonLibrary\PersonLibrary.csproj" />
+    <ProjectReference Include="..\SimpleMathTests\SimpleMathTests.csproj" />
   </ItemGroup>
 
 </Project>
