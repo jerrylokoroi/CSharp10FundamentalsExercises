@@ -1,6 +1,11 @@
-﻿using CSharp10FundamentalsExercises;
+﻿Console.Write("Enter a number: ");
+int number = int.Parse(Console.ReadLine());
 
-MathOperation math = new MathOperation();
-int sum = math.Add(3, 5);
-
-Console.WriteLine(sum);
+if (number % 2 == 0)
+{
+    Console.WriteLine("The number is even.");
+}
+else
+{
+    Console.WriteLine("The number is even.");  // This is the bug! // To fix Bug Console.WriteLine("The number is odd.")
+}
