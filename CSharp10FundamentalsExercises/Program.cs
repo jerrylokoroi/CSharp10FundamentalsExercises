@@ -1,11 +1,18 @@
 ﻿Console.Write("Enter a number: ");
 int number = int.Parse(Console.ReadLine());
 
-if (number % 2 == 0)
+int factorial = CalculateFactorial(number);
+
+Console.WriteLine($"The factorial of {number} is {factorial}");
+
+static int CalculateFactorial(int n)
 {
-    Console.WriteLine("The number is even.");
-}
-else
-{
-    Console.WriteLine("The number is even.");  // This is the bug! // To fix Bug Console.WriteLine("The number is odd.")
+    if (n == 0 || n == 1)
+    {
+        return 1;
+    }
+    else
+    {
+        return n * CalculateFactorial(n - 1);
+    }
 }
