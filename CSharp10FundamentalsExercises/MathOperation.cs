@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharp10FundamentalsExercises
 {
-    internal class MathOperation
+    public class MathOperation
     {
             public int Add(int a, int b)
             {

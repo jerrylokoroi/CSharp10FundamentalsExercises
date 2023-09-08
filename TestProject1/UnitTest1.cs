@@ -9,6 +9,16 @@ namespace TestProject1
         {
         }
 
+        [Test] 
+        public void Test()
+        {
+            MathOperation mathOperation = new MathOperation();
+
+            int result = mathOperation.Add(23, 6);
+
+            Assert.That(result, Is.EqualTo(29));
+        }
+
         [Test]
         public void Add_WhenGivenTwoIntegers_ReturnsSum()
         {
@@ -56,5 +66,6 @@ namespace TestProject1
 
             Assert.Throws<ArgumentException>(() => calculator.Divide(10, 0));
         }
+
     }
 }
