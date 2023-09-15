@@ -1,20 +1,21 @@
-﻿// Create source.txt and write text to it
-using (StreamWriter writer = new StreamWriter("source.txt"))
+﻿string filePath = "output.bin";
+
+// Write integers to the binary file
+using (BinaryWriter writer = new BinaryWriter(File.Open(filePath, FileMode.Create)))
 {
-    writer.WriteLine("Hello again, world!");
+    writer.Write(1);
+    writer.Write(2);
+    writer.Write(3);
+    writer.Write(4);
 }
 
-// Copy source.txt to destination.txt
-File.Copy("source.txt", "destination2.txt");
+// Read integers from the binary file
+using (BinaryReader reader = new BinaryReader(File.Open(filePath, FileMode.Open)))
+{
+    int num1 = reader.ReadInt32();
+    int num2 = reader.ReadInt32();
+    int num3 = reader.ReadInt32();
+    int num4 = reader.ReadInt32();
 
-// Rename destination.txt to newname.txt
-File.Move("destination.txt", "newname2.txt");
-
-// Verify if both operations were successful
-bool sourceExists = File.Exists("source.txt");
-bool destinationExists = File.Exists("destination.txt");
-bool newNameExists = File.Exists("newname.txt");
-
-Console.WriteLine($"source.txt exists: {sourceExists}");
-Console.WriteLine($"destination.txt exists: {destinationExists}");
-Console.WriteLine($"newname.txt exists: {newNameExists}");
+    Console.WriteLine($"{num1}, {num2}, {num3}, {num4}");
+}
