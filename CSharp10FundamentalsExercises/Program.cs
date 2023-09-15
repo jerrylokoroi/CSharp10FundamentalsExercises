@@ -1,17 +1,22 @@
 ﻿string filePath = @"C:\Users\Renter\Development\CSharp10FundamentalsExercises\CSharp10FundamentalsExercises\output.txt";
 
-using (StreamWriter writer = new StreamWriter(filePath))
-{
-    writer.WriteLine("Hello, World!");
-}
 
-string content = File.ReadAllText(filePath);
-
-if (content == "Hello, World!")
+// Check if the file exists
+if (File.Exists(filePath))
 {
-    Console.WriteLine("Text was successfully written to the file.");
+    // Read the file using StreamReader
+    using (StreamReader reader = new StreamReader(filePath))
+    {
+        string line;
+
+        // Read and print each line
+        while ((line = reader.ReadLine()) != null)
+        {
+            Console.WriteLine(line);
+        }
+    }
 }
 else
 {
-    Console.WriteLine("Error: Text was not written to the file.");
+    Console.WriteLine("File not found.");
 }
