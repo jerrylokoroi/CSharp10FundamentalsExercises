@@ -1,22 +1,20 @@
-﻿string filePath = @"C:\Users\Renter\Development\CSharp10FundamentalsExercises\CSharp10FundamentalsExercises\output.txt";
-
-
-// Check if the file exists
-if (File.Exists(filePath))
+﻿// Create source.txt and write text to it
+using (StreamWriter writer = new StreamWriter("source.txt"))
 {
-    // Read the file using StreamReader
-    using (StreamReader reader = new StreamReader(filePath))
-    {
-        string line;
+    writer.WriteLine("Hello again, world!");
+}
 
-        // Read and print each line
-        while ((line = reader.ReadLine()) != null)
-        {
-            Console.WriteLine(line);
-        }
-    }
-}
-else
-{
-    Console.WriteLine("File not found.");
-}
+// Copy source.txt to destination.txt
+File.Copy("source.txt", "destination2.txt");
+
+// Rename destination.txt to newname.txt
+File.Move("destination.txt", "newname2.txt");
+
+// Verify if both operations were successful
+bool sourceExists = File.Exists("source.txt");
+bool destinationExists = File.Exists("destination.txt");
+bool newNameExists = File.Exists("newname.txt");
+
+Console.WriteLine($"source.txt exists: {sourceExists}");
+Console.WriteLine($"destination.txt exists: {destinationExists}");
+Console.WriteLine($"newname.txt exists: {newNameExists}");
