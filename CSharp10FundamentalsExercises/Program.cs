@@ -1,17 +1,26 @@
-﻿// Create the main directory "mydir"
-string mainDirectory = "mydir";
-Directory.CreateDirectory(mainDirectory);
+﻿// Prompt user for file path
+Console.Write("Enter the file path: ");
+string filePath = Console.ReadLine();
 
-// Create the subdirectory "mysubdir" inside "mydir"
-string subDirectory = Path.Combine(mainDirectory, "mysubdir");
-Directory.CreateDirectory(subDirectory);
-
-// Get a list of files in "mydir"
-string[] filesInMyDir = Directory.GetFiles(mainDirectory);
-
-// Print out the names of the files
-Console.WriteLine("Files in mydir:");
-foreach (string file in filesInMyDir)
+// Check if the file exists
+if (File.Exists(filePath))
 {
-    Console.WriteLine(Path.GetFileName(file));
+    // Read the file using FileStream and StreamReader
+    using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
+    {
+        using (StreamReader reader = new StreamReader(fs))
+        {
+            string line;
+
+            // Read and print each line
+            while ((line = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }
+}
+else
+{
+    Console.WriteLine("File not found.");
 }
