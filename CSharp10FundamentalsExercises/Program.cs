@@ -1,25 +1,16 @@
-﻿// Prompt user for file path
-Console.Write("Enter the file path: ");
-string filePath = Console.ReadLine();
+﻿// Prompt user for a sentence
+using System.Text.RegularExpressions;
 
-// Prompt user for string
-Console.Write("Enter the string to write: ");
-string inputString = Console.ReadLine();
+Console.Write("Enter a sentence: ");
+string inputSentence = Console.ReadLine();
 
-// Prompt user for integer
-Console.Write("Enter the number of times to write the string: ");
-int repeatTimes = Convert.ToInt32(Console.ReadLine());
+// Define a regular expression to split the sentence into words
+string pattern = @"\b\w+\b";
 
-// Create a new file and write the string n times
-using (FileStream fs = new FileStream(filePath, FileMode.Create, FileAccess.Write))
-{
-    using (StreamWriter writer = new StreamWriter(fs))
-    {
-        for (int i = 0; i < repeatTimes; i++)
-        {
-            writer.WriteLine(inputString);
-        }
-    }
-}
+// Use Regex.Matches to find all matches of the pattern
+MatchCollection matches = Regex.Matches(inputSentence, pattern);
 
-Console.WriteLine($"File '{Path.GetFileName(filePath)}' created and written successfully.");
+// Count the number of matches (words)
+int wordCount = matches.Count;
+
+Console.WriteLine($"The sentence contains {wordCount} words.");
