@@ -1,16 +1,31 @@
-﻿// Prompt user for a sentence
-using System.Text.RegularExpressions;
+﻿try
+{
+    Console.Write("Enter a number: ");
+    int userInput = Convert.ToInt32(Console.ReadLine());
 
-Console.Write("Enter a sentence: ");
-string inputSentence = Console.ReadLine();
+    int result = DivideByTen(userInput);
+    Console.WriteLine($"Result: {result}");
+}
+catch (DivideByZeroException ex)
+{
+    Console.WriteLine("Error: Cannot divide by zero. " + ex.Message);
+}
+catch (FormatException ex)
+{
+    Console.WriteLine("Error: Invalid input. " + ex.Message);
+}
+catch (Exception ex)
+{
+    Console.WriteLine("An unexpected error occurred: " + ex.Message);
+}
+    
 
-// Define a regular expression to split the sentence into words
-string pattern = @"\b\w+\b";
+    static int DivideByTen(int number)
+{
+    if (number == 0)
+    {
+        throw new DivideByZeroException();
+    }
 
-// Use Regex.Matches to find all matches of the pattern
-MatchCollection matches = Regex.Matches(inputSentence, pattern);
-
-// Count the number of matches (words)
-int wordCount = matches.Count;
-
-Console.WriteLine($"The sentence contains {wordCount} words.");
+    return 10 / number;
+}
