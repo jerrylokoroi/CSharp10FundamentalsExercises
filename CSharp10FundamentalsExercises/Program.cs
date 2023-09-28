@@ -1,15 +1,25 @@
-﻿try
+﻿using CSharp10FundamentalsExercises;
+
+try
 {
-    Console.Write("Enter a number: ");
-    string userInput = Console.ReadLine();
+    Console.Write("Enter a positive number: ");
+    int userInput = Convert.ToInt32(Console.ReadLine());
 
-    double number = Convert.ToDouble(userInput);
+    if (userInput < 0)
+    {
+        throw new NegativeNumberException("Input is a negative number.");
+    }
 
-    Console.WriteLine($"You entered the number: {number}");
+    double squareRoot = Math.Sqrt(userInput);
+    Console.WriteLine($"Square root of {userInput} is: {squareRoot}");
 }
 catch (FormatException ex)
 {
-    Console.WriteLine("Error: Input is not a valid number. " + ex.Message);
+    Console.WriteLine("Error: Invalid input. " + ex.Message);
+}
+catch (NegativeNumberException ex)
+{
+    Console.WriteLine("Error: " + ex.Message);
 }
 catch (Exception ex)
 {
