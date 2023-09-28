@@ -1,22 +1,16 @@
 ﻿try
 {
-    string filePath = @"C:\Users\Renter\Development\CSharp10FundamentalsExercises\CSharp10FundamentalsExercises\File_path\sample.txt";
+    Console.Write("Enter a number: ");
+    string userInput = Console.ReadLine();
 
-    if (File.Exists(filePath))
-    {
-        string content = File.ReadAllText(filePath);
-        Console.WriteLine("File Content:");
-        Console.WriteLine(content);
-    }
-    else
-    {
-        Console.WriteLine("Error: The specified file does not exist.");
-    }
+    double number = Convert.ToDouble(userInput);
+
+    Console.WriteLine($"You entered the number: {number}");
 }
-/*catch (FileNotFoundException ex)
+catch (FormatException ex)
 {
-    Console.WriteLine("Error: File not found. " + ex.Message);
-}*/
+    Console.WriteLine("Error: Input is not a valid number. " + ex.Message);
+}
 catch (Exception ex)
 {
     Console.WriteLine("An unexpected error occurred: " + ex.Message);
